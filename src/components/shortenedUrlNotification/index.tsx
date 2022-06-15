@@ -1,17 +1,13 @@
 import React from 'react';
 
 import { CopyIcon } from '@/components/icon';
+import { IShortenedUrl } from '@/interfaces';
 import { Flex, Text, Button, Icon } from '@chakra-ui/react';
-
-interface IShortenedUrlNotificationProps {
-  originalUrl: string;
-  shortenedUrl: string;
-}
 
 export const ShortenedUrlNotification = ({
   originalUrl,
   shortenedUrl,
-}: IShortenedUrlNotificationProps): React.ReactElement => {
+}: IShortenedUrl): React.ReactElement => {
   const handleCopy = () => {
     navigator.clipboard
       .writeText(shortenedUrl)
