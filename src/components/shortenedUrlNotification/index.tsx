@@ -13,24 +13,33 @@ export const ShortenedUrlNotification = ({
   shortenedUrl,
 }: IShortenedUrlNotificationProps): React.ReactElement => (
   <Flex
-    alignItems='center'
-    background='primary'
-    justifyContent='space-between'
-    color='white'
+    direction={{ base: 'column', md: 'row' }}
+    gap={{ base: 4, sm: 8 }}
+    alignItems={{ base: 'start', sm: 'center' }}
+    background={'primary'}
+    justifyContent={'space-between'}
+    color={'white'}
     p={4}
     borderRadius={10}
   >
-    <Text fontSize={'sm'} fontWeight={700}>
+    <Text textAlign={'start'} fontSize={'sm'} fontWeight={700} noOfLines={1}>
       {originalUrl}
     </Text>
-    <Flex alignItems='center'>
+    <Flex
+      direction={{ base: 'column', md: 'row' }}
+      gap={{ base: 4, sm: 8 }}
+      width={'100%'}
+      justifyContent={'flex-end'}
+      alignItems={{ base: 'start', sm: 'center' }}
+    >
       <Text fontSize={'sm'} fontWeight={700}>
         {shortenedUrl}
       </Text>
       <Button
-        ml={10}
         fontWeight={700}
-        bg='orange.300'
+        bg={'orange.300'}
+        width={{ base: '100%', sm: 'auto' }}
+        _active={{ bg: 'orange.400' }}
         _hover={{
           bg: 'orange.400',
         }}
