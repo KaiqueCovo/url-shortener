@@ -13,4 +13,7 @@ export const theme = extendTheme({
       },
     },
   },
+  colors: {
+    primary: '#00E8BB',
+  },
 });
