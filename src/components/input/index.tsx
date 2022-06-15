@@ -1,7 +1,9 @@
 import React from 'react';
 
-import { InputProps, Input as ChakraInput } from '@chakra-ui/react';
+import { InputProps, Input as ChakraInput, forwardRef } from '@chakra-ui/react';
 
-export const Input = (props: InputProps): React.ReactElement => (
-  <ChakraInput {...props} focusBorderColor='primary' />
+export const Input = forwardRef(
+  (props: InputProps, ref): React.ReactElement => (
+    <ChakraInput ref={ref} {...props} focusBorderColor='primary' />
+  ),
 );
